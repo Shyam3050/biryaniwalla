@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+._swiper_btn_container {
+  display: flex;
+}
+._swiper_btn_container > * + * {
+  margin-left: 1rem;
+}
+._swiper_arrow {
+  background: rgb(226, 226, 231);
+  border-radius: 100%;
+  padding: 8px 8px 8px;
+}
+._image_grid > * + * {
+  margin-left: 1rem;
+}
+._image_grid::-webkit-scrollbar {
+  display: none;
+}
+._gap_ > * + * {
+  margin: 0.5rem;
+}
+._other_::after{
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  background-color: #3d4152;
+}
