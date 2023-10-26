@@ -4,7 +4,6 @@ import Dosa from "../../assets/category/Dosa.webp";
 import Khichdi from "../../assets/category/Khichdi.webp";
 import Omelette from "../../assets/category/Omelette.webp";
 import Paratha from "../../assets/category/Paratha.webp";
-import Pongal from "../../assets/category/pongal.webp";
 import Parotta from "../../assets/category/Parotta.webp";
 import Pure_Veg from "../../assets/category/Pure_Veg.webp";
 import Upma from "../../assets/category/Upma.webp";
@@ -19,7 +18,7 @@ const CategorySwiper = ({ id }) => {
     Khichdi,
     Omelette,
     Paratha,
-    Pongal,
+
     Parotta,
     Upma,
     Pure_Veg,
