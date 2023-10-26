@@ -16,7 +16,7 @@ const OfferSwiper = ({ id }) => {
           key={item}
           className={`img_container h-64 w-[26.5rem] min-w-[26.5rem]`}
         >
-          <img src={item} alt="" className="w-full h-full" />
+          <img src={item} alt="" className="w-full h-full" loading="lazy"/>
         </div>
       ))}
     </div>

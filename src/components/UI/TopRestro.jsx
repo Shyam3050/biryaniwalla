@@ -22,7 +22,7 @@ const TopRestro = ({ id }) => {
           className={`img_container h-[19rem] w-[17rem] min-w-[17rem]`}
         >
           <div className="h-[11.375rem] w-full">
-            <img src={item} alt="" className="w-full h-full" />
+            <img src={item} alt="" className="w-full h-full" loading="lazy" />
           </div>
           <div className="mt-2">
             <p className="font-bold text-xl ">Scoops Ice Cream</p>

@@ -36,7 +36,7 @@ const CategorySwiper = ({ id }) => {
             key={item}
             className={`img_container h-[11.25rem] w-[9rem] min-w-[9rem]`}
           >
-            <img src={item} alt="" className="w-full h-full" />
+            <img src={item} alt="" className="w-full h-full" loading="lazy" />
           </div>
         ))}
       </div>
