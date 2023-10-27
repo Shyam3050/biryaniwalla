@@ -18,7 +18,6 @@ const CategorySwiper = ({ id }) => {
     Khichdi,
     Omelette,
     Paratha,
-
     Parotta,
     Upma,
     Pure_Veg,
