@@ -1,22 +1,28 @@
 import { AiFillStar } from "react-icons/ai";
-import kfc6 from "../assets/toprestro/kfc.webp";
 
-const RestroCard = () => {
+const RestroCard = ({ data }) => {
+  console.log(data);
   return (
-    <div className="w-[200px] h-[240px] border">
+    <div className="w-[200px] h-[300px] border rounded-2xl ">
       <div className="w-full h-[135px] rounded-2xl overflow-hidden">
-        <img src={kfc6} alt="" className="w-full h-full object-cover" />
+        <img
+          src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${data.cloudinaryImageId}`}
+          alt=""
+          className="w-full h-full object-cover"
+        />
       </div>
-      <div className="mt-2">
-        <p className="font-bold text-xl ">Scoops Ice Cream</p>
+      <div className="mt-2 p-2">
+        <p className="font-bold text-xl overflow-hidden whitespace-nowrap text-ellipsis ">
+          {data.name}
+        </p>
         <p className="flex items-center font-semibold text-lg-">
           <span>
             <AiFillStar className="text-green-700" />
           </span>
-          4.5
+          {data.avgRatingString}
         </p>
-        <p className="text-gray-600 text-sm">Ice Cream, Desserts</p>
-        <p className="text-gray-600">Koti</p>
+        <p className="text-gray-600 text-sm">{data.cuisines.join(", ")}</p>
+        <p className="text-gray-600">{data.locality}</p>
       </div>
     </div>
   );
