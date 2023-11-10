@@ -1,14 +1,9 @@
-import { useEffect, useState } from "react";
 import RestroCard from "./RestroCard";
+import useRestroMenu from "../hooks/useRestoMenu";
 
 const RestaurentsList = () => {
-  const [restroList, setRestroList] = useState([]);
-  console.log(restroList);
-  useEffect(() => {
-    fetch("https://tiggy.vercel.app/api/restaurents")
-      .then((data) => data.json())
-      .then((data) => setRestroList(data));
-  }, []);
+  const restroList = useRestroMenu();
+
   return (
     <section>
       <h2 className="text-2xl font-bold py-4">
@@ -16,7 +11,9 @@ const RestaurentsList = () => {
       </h2>
       <div className="my-6 restrolist">
         {restroList.length !== 0
-          ? restroList.data.map((item) => <RestroCard key={item.info.id} data = {item.info}/>)
+          ? restroList.data.map((item) => (
+              <RestroCard key={item.info.id} data={item.info} />
+            ))
           : "loading....."}
       </div>
     </section>
