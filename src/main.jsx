@@ -2,9 +2,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Body from "./components/body.jsx";
+import Body from "./components/Body.jsx";
 import RestroDetail from "./components/RestroDetail";
 import Cart from "./components/Cart/Cart.jsx";
+import ChAdress from "./components/Cart/ChAdress.jsx";
+import CartLayout from "./components/Cart/CartLayout.jsx";
 
 const routerConfig = createBrowserRouter([
   {
@@ -12,24 +14,26 @@ const routerConfig = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <Body />,
       },
       {
-        path: "/restaurants/:resid",
+        path: "restaurants/:resid",
         element: <RestroDetail />,
       },
       {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/about",
-        element: <h1>about component</h1>,
+        path: "cart",
+        element: <CartLayout />,
+        children: [
+          { index: true, element: <Cart /> },
+          {
+            path: "choose-address",
+            element: <ChAdress />,
+          },
+        ],
       },
     ],
   },
-  
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={routerConfig} />
