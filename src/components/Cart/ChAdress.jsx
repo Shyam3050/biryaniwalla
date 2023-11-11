@@ -1,5 +1,6 @@
 import { AiOutlineClose, AiOutlineHome } from "react-icons/ai";
 
+import {Link} from 'react-router-dom'
 const ChAdress = () => {
   return (
     <main className="my-24 w-[95%] md:w-[60%]  max-w-5xl mx-auto  -z-10">
@@ -12,7 +13,9 @@ const ChAdress = () => {
             <p className="text-sm font-bold">CHOOSE DELIVERY ADDRESS</p>
           </div>
         </div>
+        <Link to="/cart/add-address">
         <p className="text-red-600 cursor-pointer">Add New</p>
+        </Link>
       </div>
       <div className="flex justify-between items-center my-2">
         <label for="home" className="flex gap-2">

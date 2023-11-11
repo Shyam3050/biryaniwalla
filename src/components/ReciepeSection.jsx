@@ -4,7 +4,7 @@ const ReciepeSection = ({ item, showCard, setShowCard }) => {
   return (
     <section>
       <div
-        className="flex justify-between border py-2 px-4 items-center my-2 bg-white cursor-pointer "
+        className="flex justify-between  py-2 pr-4 items-center mt-2 bg-white cursor-pointer "
         onClick={() => setShowCard()}
       >
         <p>{item}</p>
@@ -13,7 +13,9 @@ const ReciepeSection = ({ item, showCard, setShowCard }) => {
           fill="currentColor"
           strokeWidth="0"
           viewBox="0 0 1024 1024"
-          className="inline ml-2 text-orange-500"
+          className={`inline ml-2 text-orange-500 ${
+            showCard ? "rotate-180" : ""
+          } `}
           height="1em"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +24,15 @@ const ReciepeSection = ({ item, showCard, setShowCard }) => {
         </svg>
       </div>
 
-      {showCard ? <ReciepeCard /> : ""}
+      {showCard ? (
+        <div>
+          <ReciepeCard />
+          <ReciepeCard />
+        </div>
+      ) : (
+        ""
+      )}
+      <hr />
     </section>
   );
 };

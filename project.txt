@@ -1,2 +1,0 @@
-we can only add one resturent item into cart
-only we order one resturent food at a time. 

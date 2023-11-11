@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsCaretUpSquareFill } from "react-icons/bs";
 import { BiMinus, BiPlus } from "react-icons/bi";
+import CartContext from "../../context/CartContext";
 
 const CartItem = () => {
+  const  data = useContext(CartContext);
+ console.log(data);
   return (
     <div className="my-4 border flex justify-between px-8 py-4">
-      <div className="flex items-center">
+      <div className="flex data-center">
         <BsCaretUpSquareFill className="text-red-700" />
         <div className=" ml-4">
           <p>Mutton biryani</p>
@@ -17,7 +20,7 @@ const CartItem = () => {
             <BiMinus className=" text-2xl " />
           </button>
           <p>2</p>
-          <button>
+          <button onClick={() => {data.addToCart()}}>
             <BiPlus className=" text-2xl" />
           </button>
         </div>

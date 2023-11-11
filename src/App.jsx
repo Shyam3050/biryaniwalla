@@ -1,11 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
+import { CartContextProvider } from "./context/CartContext";
 
 function App() {
   return (
     <>
-      <Header />
-      <Outlet />
+      <CartContextProvider>
+        <Header />
+        <Outlet />
+      </CartContextProvider>
     </>
   );
 }

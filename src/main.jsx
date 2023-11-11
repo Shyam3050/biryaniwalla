@@ -30,6 +30,10 @@ const routerConfig = createBrowserRouter([
             path: "choose-address",
             element: <ChAdress />,
           },
+          {
+            path: "add-address",
+            element: <h1>ADD ADDRESS</h1>,
+          },
         ],
       },
     ],

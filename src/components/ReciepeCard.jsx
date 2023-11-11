@@ -1,7 +1,7 @@
 const ReciepeCard = () => {
   return (
     <div>
-      <div className="flex justify-between bg-white">
+      <div className="flex justify-between bg-white pt-4">
         <div>
           <p className="text-xs">Bestseller</p>
           <p className="text-base font-semibold">Kichdi Khata Kheema</p>
@@ -17,13 +17,13 @@ const ReciepeCard = () => {
           </div>
           <button
             type="button"
-            className="absolute border w-[96px] h-[36px] mx-auto left-2/4 bottom-3 -translate-x-2/4 bg-white  rounded-md "
+            className="absolute border w-[96px] h-[36px] mx-auto left-2/4 bottom-3 -translate-x-2/4 bg-white text-green-600 text-xs font-semibold rounded-md "
           >
             ADD
           </button>
         </div>
       </div>
-      <hr className="pt-4 pb-6 bg-white" />
+      <hr className="pt-4 pb-2 bg-white" />
     </div>
   );
 };

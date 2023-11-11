@@ -3,6 +3,13 @@ import ReciepeSection from "./ReciepeSection";
 
 const RestroDetail = () => {
   const [showCard, setShowCard] = useState(0);
+  function handleToogle(index){
+    if(showCard === index){
+      setShowCard(null)
+    }else{
+      setShowCard(index)
+    }
+  }
   const receipes = [
     "Fried Chicken & Wings (3)",
     "Burgers & Wraps (3)  ",
@@ -46,7 +53,7 @@ const RestroDetail = () => {
             key={item}
             item={item}
             showCard={showCard === i ? true : false}
-            setShowCard={() => setShowCard(i)}
+            setShowCard={() => handleToogle(i)}
           />
         ))}
       </div>

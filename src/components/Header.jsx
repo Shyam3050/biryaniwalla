@@ -3,8 +3,12 @@ import { AiOutlineDown, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
 import { BiSolidOffer, BiCartAlt } from "react-icons/bi";
 import BottomNav from "./BottomNav";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../context/CartContext";
 
 const Header = () => {
+  const { items } = useContext(CartContext);
+  console.log(items);
   const navMenu = [
     {
       name: "Search",
@@ -58,12 +62,21 @@ const Header = () => {
             {navMenu.map((navItem) => (
               <Link key={navItem.name} to={navItem.to}>
                 <li
-                  className={`flex items-center _gap_ hover:cursor-pointer ${
+                  className={`relative flex items-center _gap_ hover:cursor-pointer ${
                     navItem.smHidden ? "hidden md:flex" : ""
-                  }`}
+                  } `}
                 >
                   {navItem.icn}
                   <p className="text-base font-semibold ">{navItem.name}</p>
+                  {navItem.name === "Cart" ? (
+                    <div class="absolute -top-4  -left-4 w-5 h-5 rounded-full bg-orange-600 flex items-center justify-center">
+                      <p class="font-semibold text-xs text-white ">
+                        {items.length}
+                      </p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </li>
               </Link>
             ))}
