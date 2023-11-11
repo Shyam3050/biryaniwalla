@@ -1,6 +1,7 @@
 import { AiOutlineArrowLeft, AiOutlineHome } from "react-icons/ai";
 
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
@@ -46,7 +47,11 @@ const Cart = () => {
           </div>
         </div>
         <div>
-          <p className="text-orange-500 text-xs font-bold cursor-pointer">CHANGE</p>
+          <Link to={"choose-address"}>
+            <p className="text-orange-500 text-xs font-bold cursor-pointer">
+              CHANGE
+            </p>
+          </Link>
         </div>
       </div>
       <div className=" flex justify-between items-center bg-orange-600 text-white p-2 mt-8">
