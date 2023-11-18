@@ -1,12 +1,13 @@
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiCartAlt } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const BottomNav = () => {
   return (
     <div className=" md:hidden  fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200">
       <div className="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
-        <button
-          type="button"
+        <Link
+          to="/"
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 "
         >
           <svg
@@ -21,27 +22,30 @@ const BottomNav = () => {
           <span className="text-sm text-gray-500 group-hover:text-blue-600 ">
             Home
           </span>
-        </button>
-        <button
-          type="button"
-          className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 "
+        </Link>
+        <Link
+          to="/cart"
+          className=" relative inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 "
         >
           <BiCartAlt className="inline text-2xl text-gray-500" />
           <span className="text-sm text-gray-500  group-hover:text-blue-600 ">
-           Cart
+            Cart
           </span>
-        </button>
-        <button
-          type="button"
+          <div class="absolute -top-1  left-10 w-5 h-5 rounded-full bg-orange-600 flex items-center justify-center">
+            <p class="font-semibold text-xs text-white ">{5}</p>
+          </div>
+        </Link>
+        <Link
+          to="/search"
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 "
         >
           <AiOutlineSearch className="inline text-2xl text-gray-500" />
           <span className="text-sm text-gray-500  group-hover:text-blue-600 ">
             Search
           </span>
-        </button>
-        <button
-          type="button"
+        </Link>
+        <Link
+          to="/signin"
           className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 "
         >
           <svg
@@ -54,9 +58,9 @@ const BottomNav = () => {
             <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
           </svg>
           <span className="text-sm text-gray-500  group-hover:text-blue-600 ">
-            Profile
+            Signin
           </span>
-        </button>
+        </Link>
       </div>
     </div>
   );

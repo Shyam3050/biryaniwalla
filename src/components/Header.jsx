@@ -16,12 +16,7 @@ const Header = () => {
       smHidden: true,
       to: "/search",
     },
-    {
-      name: "Offer",
-      icn: <BiSolidOffer className="inline text-2xl" />,
-      smHidden: false,
-      to: "/offer",
-    },
+
     {
       name: "Cart",
       icn: <BiCartAlt className="inline text-2xl" />,

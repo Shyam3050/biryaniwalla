@@ -7,6 +7,8 @@ import RestroDetail from "./components/RestroDetail";
 import Cart from "./components/Cart/Cart.jsx";
 import ChAdress from "./components/Cart/ChAdress.jsx";
 import CartLayout from "./components/Cart/CartLayout.jsx";
+import Search from "./components/Search.jsx";
+import Collections from "./components/Collections.jsx";
 
 const routerConfig = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const routerConfig = createBrowserRouter([
       {
         index: true,
         element: <Body />,
+      },
+      {
+        path: "collections/:receipeId",
+        element: <Collections />,
       },
       {
         path: "restaurants/:resid",
@@ -37,6 +43,10 @@ const routerConfig = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/search",
+    element: <Search />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
